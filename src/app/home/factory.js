@@ -1,6 +1,16 @@
 (function() {
     "use strict";
 
+    /**
+     * @ngdoc overview
+     * @name app.home.factory
+     *
+     * @description
+     * Emulates a promise based backend to power application
+     * This supports blob value storage
+     * use $q to promisify requests.
+     */
+
     angular.module("app.home.factory", [])
 
     .factory("indexedDBService", function ($window, $q) {
@@ -12,7 +22,15 @@
             var deferred = $q.defer();
             var version = 1;
             var request = indexedDB.open("jobs", version);
-
+            /**
+             * @ngdoc method
+             * @methodOf request.onupgradeneeded
+             * @name onupgradeneeded
+             *
+             * @description
+             * Checks if update is available
+             *
+             */
             request.onupgradeneeded = function (e) {
                 db = e.target.result;
 
@@ -27,10 +45,32 @@
                 });
             };
 
+            /**
+             * @ngdoc method
+             * @methodOf request.onsuccess
+             * @name onsuccess
+             *
+             * @description
+             * on success handler of db operation.
+             * Use $q to promisify
+             *
+             */
+
             request.onsuccess = function (e) {
                 db = e.target.result;
                 deferred.resolve();
             };
+
+            /**
+             * @ngdoc method
+             * @methodOf request.onerror
+             * @name onerror
+             *
+             * @description
+             * on error handler of db operation.
+             * Use $q to promisify
+             *
+             */
 
             request.onerror = function () {
                 deferred.reject();
@@ -38,6 +78,16 @@
 
             return deferred.promise;
         };
+
+        /**
+         * @ngdoc method
+         * @name get
+         *
+         * @description
+         * get all records from store.
+         * Use $q to promisify
+         *
+         */
 
         var get = function () {
             var deferred = $q.defer();
@@ -75,6 +125,16 @@
 
             return deferred.promise;
         };
+
+
+        /**
+         * @ngdoc method
+         * @name add
+         *
+         * @description
+         * add a new record to store.
+         *
+         */
 
         var add = function (payload) {
             var deferred = $q.defer();
