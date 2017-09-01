@@ -10,6 +10,8 @@ Highlights:
 - Build automation tooling
 - Code linting
 - Karma test suit
+- Code minification for security and speed up webapp
+- Template caching for HTML files
 - Locally loaded font files to speed up webapp
 
 ## Code organization
