@@ -10,6 +10,7 @@ Highlights:
 - Build automation tooling
 - Code linting
 - Karma test suit
+- Locally loaded font files to speed up webapp
 
 ## Code organization
 
