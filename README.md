@@ -1,1 +1,1 @@
-# Simple Job Search Application
+# sample-angular-project
