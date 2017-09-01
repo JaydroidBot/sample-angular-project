@@ -62,7 +62,7 @@ sample-angular-project/
 ### Development environment
 First run
 ```bash
-$ grunt watch
+$ grunt build
 ```
 
 then
