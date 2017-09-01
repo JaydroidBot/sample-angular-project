@@ -1,0 +1,37 @@
+<html ng-app="app">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <title>Job Search App</title>
+    <base href="/">
+    <!-- compiled CSS -->
+    <% styles.forEach( function ( file ) { %>
+        <link rel="stylesheet" type="text/css" href="<%= file %>" />
+    <% }); %>
+</head>
+
+<body>
+    <div id="top"></div>
+    <!-- navigation menu -->
+    <nav id="nav-scroll" class="navbar-demo navbar navbar-demo navbar-toggleable-md navbar-inverse fixed-top">
+        <div class="container content-container">
+            <a ui-sref="jobs">
+              <span>JOB SEARCH</span>
+            </a>
+            <a ui-sref="addJob" class="btn btn-success btn-pill pull-right">
+                Add New Post
+            </a>
+        </div>
+    </nav>
+    <!-- / navigation menu -->
+    <!-- intro -->
+
+    <div ui-view="main"></div>
+
+    <% scripts.forEach( function ( file ) { %>
+        <script type="text/javascript" src="<%= file %>"></script>
+        <% }); %>
+</body>
+
+</html>

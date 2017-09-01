@@ -1,0 +1,56 @@
+<header class="parallax">
+    <div class="container text-center dark">
+        <h4 class="mt-3 mb-3">FIND YOUR DREAM JOB TODAY</h4>
+    </div>
+</header>
+<!-- /intro  -->
+<div class="container content-container">
+    <div class="content not-first">
+        <div class="input-group mt-3 w-50 ml-auto mr-auto">
+            <input class="form-control pill" placeholder="Search" type="text"
+                ng-model="searchText">
+            <span class="input-group-btn mli10">
+                <a href="" class="btn btn-success pill ml-2 ripple-cont">
+                    <div class="ripple-content">
+                        <span>Search</span>
+                    </div>
+                    <div class="ink-content"></div>
+                </a>
+            </span>
+        </div>
+    <div class="spacer">&nbsp;</div>
+    <p class="lead mt-3 mb-3 text-muted">AVAILABLE JOBS </p>
+    <!-- job listings -->
+    <div class="row">
+        <div class="col-md-12" ng-if="!$ctrl.jobs.length">
+            <div class="alert alert-info">
+                No job listing found. Create new one
+                <a ui-sref="addJob">
+                    here
+                </a>
+            </div>
+        </div>
+
+        <div class="col-md-12" ng-repeat="job in $ctrl.jobs | filter:searchText">
+            <div class="card blog-card">
+                <div class="card-block">
+                    <div class="block blog-block jobs">
+                        <h5 class="box-title mt-0 mb-2 uppercase"><a href="#"><b>{{job.title}}</b></a></h5>
+                        <p class="text-muted text-xs">Posted by <a href="#">{{job.company}}</a></p>
+                        <p class="text-muted text-xs">Apply by <a href="#">{{job.deadline}}</a></p>
+                        <p class="box-description">
+                            {{job.description}}
+                        </p>
+                        <p>
+                            <a class="text-black" href="#">Apply</a>
+                        </p>
+                    </div>
+                    <!-- / blog-block -->
+                </div>
+                <!-- / card-block -->
+            </div>
+            <!-- / card -->
+        </div>
+    </div>
+</div>
+</div>

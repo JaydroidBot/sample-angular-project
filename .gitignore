@@ -1,0 +1,9 @@
+build/
+build/*
+bin/*
+node_modules/*
+vendor/*
+coverage/*
+npm-debug.log
+bower_components/*
+/nbproject/*

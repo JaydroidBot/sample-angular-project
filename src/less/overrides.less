@@ -1,0 +1,75 @@
+/*Overrides go here*/
+a {
+    &:hover{
+        text-decoration: none !important;
+    }
+}
+header {
+    padding: 150px 0 10px 0;
+}
+.navbar-demo {
+    padding: 1.5rem 1.25rem;
+    border-radius: 0;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, .15);
+    z-index: 10;
+    background-color: #23b7e5;
+    background-image: linear-gradient(90deg, #23b7e5 0, #51c6ea);
+    background-repeat: repeat-x;
+
+    .container {
+        display: block !important;
+        line-height: 40px;
+    }
+
+    a {
+        color: #fff;
+        &:hover, &:active, &:focus {
+            text-decoration: none;
+            color: #fff;
+        }
+    }
+}
+.navbar-demo.fixed-top.nav-scroll {
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+.navbar-demo .navbar-brand {
+    width: 260px;
+}
+.navbar-brand {
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+    margin-right: .75rem;
+    margin-left: .75rem;
+}
+
+/*Helper classes*/
+.btn-pill {
+    border-radius: 50px !important;
+}
+.text-xs {
+    font-size: 0.75rem;
+}
+.uppercase {
+    text-transform: uppercase;
+}
+.mli10 {
+    margin-left: -10px;
+}
+/*form overrides*/
+select.form-control:not([size]):not([multiple]) {
+    height: auto;
+}
+
+//jobs
+.jobs {
+    p {
+        margin-bottom: 2px;
+    }
+    .box-description {
+        text-align: justify;
+        padding-top: 10px;
+    }
+}
+.blog-card {
+    margin-bottom: 10px;
+}
