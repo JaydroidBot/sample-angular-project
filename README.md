@@ -5,6 +5,11 @@ sample-angular-project
 ===========================
 
 Sample angular project that uses indexDB storage to create and list job ads.
+Highlights:
+
+- Build automation tooling
+- Code linting
+- Karma test suit
 
 ## Code organization
 
